@@ -6,6 +6,18 @@ import tempfile
 import os
 import io
 
+st.set_page_config(page_title="PDF to Excel Converter", layout="centered")
+
+hide_streamlit_style = """
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    </style>
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
+
 HEADER = ["Domain name", "Customer ID", "Amount(US$)"]
 ROW_REGEX = re.compile(r"^([\w\-.]+)\s+(C\w+)\s+([\d,]+\.\d{2})$")
 
